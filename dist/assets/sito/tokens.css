@@ -1,0 +1,53 @@
+
+
+@font-face { font-family: "Courier Prime"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/courier-prime-400.woff2") format("woff2"); }
+@font-face { font-family: "Courier Prime"; font-style: italic; font-weight: 400; font-display: swap; src: url("/assets/fonts/courier-prime-400i.woff2") format("woff2"); }
+@font-face { font-family: "Courier Prime"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/courier-prime-700.woff2") format("woff2"); }
+@font-face { font-family: "Special Elite"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/special-elite-400.woff2") format("woff2"); }
+
+:root {
+  
+  --logo-nome: "Non fidarti";          
+  --logo-coda: " · Archivio";          
+  --logo-segno: ring;                  
+  --colore-tema: #ffffff;              
+  --colore-icona: #000000;             
+
+  
+  --p-bg: #ffffff;                     
+  --p-surface: #f2f2f2;                
+  --p-ink: #000000;                    
+  --p-muted: #555555;                  
+  --p-accent: #c8102e;                 
+  --p-accent-ink: #ffffff;
+  --p-action: #000000;                 
+  --p-action-ink: #ffffff;
+
+  
+  --p-inv-bg: #000000;
+  --p-inv-surface: #1a1a1a;
+  --p-inv-ink: #ffffff;
+  --p-inv-muted: #a6a6a6;
+  --p-inv-accent: #ffffff;
+  --p-inv-accent-ink: #000000;
+  --p-inv-action: #ffffff;
+  --p-inv-action-ink: #000000;
+
+  
+  --font-display: "Special Elite", "Courier Prime", "Courier New", monospace;
+  --font-text: "Courier Prime", "Courier New", monospace;
+  --font-mono: "Courier Prime", "Courier New", monospace;
+  --display-weight: 400;
+  --display-tracking: -0.01em;
+  --display-tracking-xl: -0.015em;
+
+  
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --gutter: 24px;
+  --card-gap: 16px;
+  --ly-scale: 1;
+
+  
+  --r-sm: 2px; --r-md: 0px; --r-lg: 0px; --r-btn: 2px;
+}

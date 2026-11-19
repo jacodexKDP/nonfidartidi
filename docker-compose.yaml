@@ -1,0 +1,24 @@
+# nonfidartidi: archivio online di «Non fidarti di questo libro». nginx statico dietro il Traefik già presente
+# sulla VPS. Nessuna porta pubblicata: Traefik raggiunge il container sulla rete del progetto.
+name: nonfidartidi
+services:
+  sito:
+    build:
+      context: https://github.com/jacodexKDP/nonfidartidi.git#master
+    image: nonfidartidi-sito:latest
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nonfidartidi.rule=Host(`nonfidartidi.it`)
+      - traefik.http.routers.nonfidartidi.entrypoints=websecure
+      - traefik.http.routers.nonfidartidi.tls.certresolver=letsencrypt
+      - traefik.http.routers.nonfidartidi.service=nonfidartidi
+      - traefik.http.routers.nonfidartidi-www.rule=Host(`www.nonfidartidi.it`)
+      - traefik.http.routers.nonfidartidi-www.entrypoints=websecure
+      - traefik.http.routers.nonfidartidi-www.tls.certresolver=letsencrypt
+      - traefik.http.routers.nonfidartidi-www.middlewares=nonfidartidi-www-apex
+      - traefik.http.routers.nonfidartidi-www.service=nonfidartidi
+      - traefik.http.middlewares.nonfidartidi-www-apex.redirectregex.regex=^https?://www\.nonfidartidi\.it/(.*)
+      - traefik.http.middlewares.nonfidartidi-www-apex.redirectregex.replacement=https://nonfidartidi.it/$${1}
+      - traefik.http.middlewares.nonfidartidi-www-apex.redirectregex.permanent=true
+      - traefik.http.services.nonfidartidi.loadbalancer.server.port=80
