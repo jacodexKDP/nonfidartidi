@@ -5,7 +5,8 @@ services:
   sito:
     build:
       context: https://github.com/jacodexKDP/nonfidartidi.git#master
-    image: nonfidartidi-sito:latest
+    # a ogni aggiornamento del sito cambia il tag (1, 2, 3…): il nuovo tag obbliga la VPS a ricostruire l'immagine
+    image: nonfidartidi-sito:1
     restart: unless-stopped
     labels:
       - traefik.enable=true
