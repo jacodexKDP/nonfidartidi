@@ -1,45 +1,53 @@
 
 
-@font-face { font-family: "Courier Prime"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/courier-prime-400.woff2") format("woff2"); }
-@font-face { font-family: "Courier Prime"; font-style: italic; font-weight: 400; font-display: swap; src: url("/assets/fonts/courier-prime-400i.woff2") format("woff2"); }
-@font-face { font-family: "Courier Prime"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/courier-prime-700.woff2") format("woff2"); }
-@font-face { font-family: "Special Elite"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/special-elite-400.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/montserrat-700.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 900; font-display: swap; src: url("/assets/fonts/montserrat-900.woff2") format("woff2"); }
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 500; font-display: swap; src: url("/assets/fonts/rubik-500.woff2") format("woff2"); }
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/rubik-700.woff2") format("woff2"); }
 
 :root {
   
-  --logo-nome: "Non fidarti";          
-  --logo-coda: " · Archivio";          
-  --logo-segno: ring;                  
-  --colore-tema: #ffffff;              
-  --colore-icona: #000000;             
+  --logo-nome: "Non fidarti di questo libro";   
+  --logo-coda: "";
+  --logo-segno: none;
+  --colore-tema: #050505;                       
 
   
-  --p-bg: #ffffff;                     
-  --p-surface: #f2f2f2;                
-  --p-ink: #000000;                    
-  --p-muted: #555555;                  
-  --p-accent: #c8102e;                 
-  --p-accent-ink: #ffffff;
-  --p-action: #000000;                 
-  --p-action-ink: #ffffff;
+  --p-bg: var(--color-ruolo-fondo-sito);        
+  --p-surface: var(--color-brand-crema);        
+  --p-ink: var(--color-ruolo-testo-su-crema);   
+  --p-muted: var(--color-brand-nero);           
+  --p-accent: var(--color-ruolo-accento);       
+  --p-accent-ink: var(--color-brand-crema);
+  --p-action: var(--color-brand-rosso);         
+  --p-action-ink: var(--color-brand-crema);
 
   
-  --p-inv-bg: #000000;
-  --p-inv-surface: #1a1a1a;
-  --p-inv-ink: #ffffff;
-  --p-inv-muted: #a6a6a6;
-  --p-inv-accent: #ffffff;
-  --p-inv-accent-ink: #000000;
-  --p-inv-action: #ffffff;
-  --p-inv-action-ink: #000000;
+  --p-inv-bg: var(--color-ruolo-fascia);
+  --p-inv-surface: var(--color-brand-nero);
+  --p-inv-ink: var(--color-ruolo-testo-su-scuro);
+  --p-inv-muted: var(--color-brand-crema);
+  --p-inv-accent: var(--color-brand-crema);     
+  --p-inv-accent-ink: var(--color-brand-nero);
+  --p-inv-action: var(--color-brand-rosso);     
+  --p-inv-action-ink: var(--color-brand-crema);
 
   
-  --font-display: "Special Elite", "Courier Prime", "Courier New", monospace;
-  --font-text: "Courier Prime", "Courier New", monospace;
-  --font-mono: "Courier Prime", "Courier New", monospace;
-  --display-weight: 400;
-  --display-tracking: -0.01em;
-  --display-tracking-xl: -0.015em;
+  --font-display: var(--font-family-titolo), "Arial Black", sans-serif;
+  --font-label: var(--font-family-dicitura), Arial, sans-serif;
+  --font-text: var(--font-family-testo), Arial, sans-serif;
+  --font-mono: var(--font-family-testo), Arial, sans-serif;
+  --display-weight: var(--font-weight-titolo);
+  --display-tracking: 0;
+  --display-tracking-xl: 0;
+
+  
+  --t-h1: clamp(48px, 4.571vw + 30.17px, var(--typography-web-titolo-fontSize));
+  --ly-h1: var(--t-h1);
+  --t-label: var(--typography-web-dicitura-fontSize);
+  --t-body: var(--typography-web-testo-fontSize);
+  --t-small: 16px;
+  --t-lead: var(--typography-web-testo-fontSize);
 
   
   --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
@@ -49,5 +57,9 @@
   --ly-scale: 1;
 
   
-  --r-sm: 2px; --r-md: 0px; --r-lg: 0px; --r-btn: 2px;
+  --r-sm: 0px; --r-md: 0px; --r-lg: 0px; --r-btn: 0px;
 }
+@media (min-width: 1024px) { :root { --t-lead: var(--typography-web-testo-fontSize); --t-card: 20px; } }
+html[data-radius] { --r-sm: 0px; --r-md: 0px; --r-lg: 0px; --r-btn: 0px; }
+
+:root, .ground-base, .ground-surface, .ground-inverse { --line: var(--ink); --line-strong: var(--ink); }
