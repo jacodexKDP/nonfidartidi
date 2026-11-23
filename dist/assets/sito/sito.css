@@ -47,7 +47,7 @@ main > section.is-aperta, .hero.is-aperta { height: auto; min-height: calc(var(-
 .hero__media > .fascicolo { flex: 1 1 auto; min-height: 0; }
 .hero__media > .fascicolo:has(.campi4) { flex: 1 0 auto; }
 
-@media (max-width: 767px) { .hero--split .hero__media:has(.campi4) { flex: 1 0 auto; } .hero:has(.campi4) { height: auto; min-height: 100svh; } }
+@media (max-width: 1023px) { .hero--split .hero__media:has(> .fascicolo), .hero__media > .fascicolo { flex: 1 0 auto; } .hero:has(.hero__media > .fascicolo) { height: auto; min-height: 100svh; } }
 .hero__azioni .btn { min-width: 220px; }
 @media (max-width: 639px) { .hero__azioni .btn { width: 100%; } }
 .btn[hidden], .verifica[hidden], .esito[hidden], .epilogo[hidden] { display: none; }
@@ -83,6 +83,8 @@ h2 .muted { text-transform: none; font-family: var(--font-text); font-weight: va
 
 .nav__logo { font-family: var(--font-display); font-weight: var(--font-weight-titolo); text-transform: uppercase; letter-spacing: 0; font-size: 20px; }
 @media (max-width: 639px) { .nav:not(.is-open) .nav__logo { font-size: 14px; white-space: normal; line-height: 1.1; max-width: 9.5em; } }
+
+@media (max-width: 639px) { .closing .nav__logo { white-space: normal; } }
 
 .fascicolo, .card, #aiuti details.card { border: 2px solid var(--ink); }
 .fascicolo__testa { color: var(--ink); border-bottom: 2px solid var(--ink); }
