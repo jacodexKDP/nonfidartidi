@@ -4,7 +4,7 @@
 .fascicolo > .verifica { margin-block: auto; }
 .verifica .field input { height: 56px; }
 .verifica .aiuto#formato { font-size: var(--t-body); color: var(--ink); border-left: 2px solid var(--accent); padding-left: var(--s-4); }
-#aiuti .card { min-height: 180px; justify-content: space-between; }
+#aiuti .card { min-height: 220px; justify-content: space-between; }
 .fascicolo__testa { display: flex; justify-content: space-between; gap: var(--s-4); font-size: var(--t-label); color: var(--muted); border-bottom: 1px solid var(--line-strong); padding-bottom: var(--s-3); letter-spacing: .04em; text-transform: uppercase; }
 .verifica { display: grid; gap: var(--s-4); }
 .verifica .field :is(input) { font-family: var(--font-text); font-size: 18px; background: var(--bg); }
@@ -53,15 +53,12 @@ main > section.is-aperta, .hero.is-aperta { height: auto; min-height: calc(var(-
 .btn[hidden], .verifica[hidden], .esito[hidden], .epilogo[hidden] { display: none; }
 
 @media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
-  #aiuti .grid > details.span-6 { grid-column: 1 / -1; min-height: 7.5rem; }
+  #aiuti .grid > details.span-4 { grid-column: 1 / -1; min-height: 7.5rem; }
 }
 @media (max-width: 479px) { .closing .btn--wide { white-space: normal; text-align: left; } }
 section[hidden] { display: none !important; }
 
 @media (min-width: 640px) and (max-width: 1023px) { .closing__links .grid > .footer__col { grid-column: auto / span 6; } }
-
-.invito { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px solid var(--line-strong); }
-.segnaposto { color: var(--accent); font-weight: 700; }
 
 body { font-weight: var(--font-weight-testo); line-height: var(--typography-web-testo-lineHeight); }
 
@@ -82,7 +79,7 @@ h2 .muted { text-transform: none; font-family: var(--font-text); font-weight: va
 .indice-parti a { font-variant-numeric: tabular-nums; }
 
 .nav__logo { font-family: var(--font-display); font-weight: var(--font-weight-titolo); text-transform: uppercase; letter-spacing: 0; font-size: 20px; }
-@media (max-width: 639px) { .nav:not(.is-open) .nav__logo { font-size: 14px; white-space: normal; line-height: 1.1; max-width: 9.5em; } }
+@media (max-width: 639px) { .nav:not(.is-open) .nav__logo { font-size: var(--typography-web-dicitura-fontSize); white-space: normal; line-height: 1.1; max-width: 9.5em; } } 
 
 @media (max-width: 639px) { .closing .nav__logo { white-space: normal; } }
 
@@ -124,8 +121,54 @@ h2 .muted { text-transform: none; font-family: var(--font-text); font-weight: va
 .closing__links.ground-inverse { box-shadow: 0 0 0 100vmax var(--bg); clip-path: inset(0 -100vmax); padding-block: var(--s-7) var(--s-5); }
 footer.closing { padding-bottom: 0; }
 
-#confronto .mo-w, #confronto .mo-w.is-on { color: var(--ink); }
-
-#confronto .mo-wh__text strong, #confronto strong .mo-w, #confronto strong .mo-w.is-on { color: var(--color-brand-rosso); }
-
 .hero--copertina h1 .parola-forte { text-shadow: calc(0.7em * 17 / 180) calc(0.7em * 11 / 180) 0 var(--color-ruolo-ombra-titolo); }
+
+main > section.cresce { height: auto; min-height: calc(var(--h, 1) * 100svh); }
+.domanda { display: grid; gap: var(--s-3); }
+.domanda p, .domanda li { font-size: var(--t-body); line-height: var(--typography-web-testo-lineHeight); max-width: 62ch; }
+.domanda ol, .domanda ul { padding-left: 1.4em; display: grid; gap: var(--s-2); }
+.verifica .field textarea { width: 100%; min-height: 112px; padding: var(--s-3) var(--s-4); resize: vertical; font-family: var(--font-text); font-size: var(--t-body); font-weight: var(--font-weight-testo); line-height: 1.5; color: var(--ink); background: var(--bg); border: 2px solid var(--ink); border-radius: 0; }
+.verifica .field textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nota { display: grid; gap: var(--s-3); margin-block: 0 var(--s-6); }
+.nota > .t-label { margin: 0; }
+.nota .prosa { max-width: 62ch; }
+#aiuti .grid { align-items: start; }
+
+.soluzione { margin-top: var(--s-7); padding-top: var(--s-6); display: grid; gap: var(--s-5); }
+.soluzione__testa { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-5); align-items: start; }
+.soluzione__testa h3 { font-size: var(--t-card); margin: 0; }
+.soluzione__testa p { margin: var(--s-1) 0 0; max-width: 62ch; }
+.soluzione .btn--secondary, html[data-buttons] .soluzione .btn--secondary { background: transparent; color: var(--ink); border: 2px solid var(--ink); min-width: 220px; }
+.soluzione .btn--secondary:hover, html[data-buttons] .soluzione .btn--secondary:hover { background: var(--ink); color: var(--bg); }
+.soluzione .btn[hidden] { display: none; }
+.dove { border-top: 1px solid var(--line-strong); padding-top: var(--s-4); display: grid; gap: var(--s-3); }
+#testo-sol { max-width: 72ch; }
+@media (max-width: 639px) {
+  .soluzione__testa { grid-template-columns: minmax(0, 1fr); }
+  .soluzione__testa > .btn { width: 100%; }
+}
+
+#aiuti details.card > summary { flex-wrap: wrap; }
+#aiuti summary > .apri__chiuso { order: 2; flex-basis: 100%; font-size: var(--t-small); }
+#aiuti summary > .apri__chiuso.is-no { color: var(--accent); }
+
+.campi4 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.verifica .field :is(input, textarea) { width: 100%; min-width: 0; max-width: 100%; box-sizing: border-box; }
+
+.verifica { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 479px) {
+  .hero__azioni .btn, .soluzione .btn, .verifica .btn { white-space: nowrap; text-align: center; height: var(--btn-h, 48px); min-height: var(--btn-h, 48px); padding-block: 0; min-width: 0; }
+  .verifica .field textarea { min-height: 64px; }
+  .verifica .field input { height: 48px; }
+  .fascicolo { gap: var(--s-4); padding: var(--s-4); }
+  .verifica { gap: var(--s-3); }
+  .verifica .form__status { min-height: 0; }
+  .hero__lead, .domanda { margin-block: 0; }
+}
+@media (max-width: 359px) {
+  .hero__azioni .btn, .soluzione .btn, .verifica .btn { white-space: normal; height: auto; min-height: var(--btn-h, 48px); padding-block: var(--s-3); }
+}
+
+.hero h1.titolo-lungo { font-size: clamp(44px, 5.6vw, 96px); overflow-wrap: normal; word-break: normal; hyphens: manual; }
+.apri__aperto { font-size: var(--t-body); }
+[data-aperto][hidden] { display: none; }
